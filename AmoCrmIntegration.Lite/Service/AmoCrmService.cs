@@ -1,5 +1,4 @@
-﻿using AmoCrmIntegration.Lite.Interface;
-using AmoCrmIntegration.Lite.Methods;
+﻿using AmoCrmIntegration.Lite.Methods;
 using AmoCrmIntegration.Lite.Models;
 using AmoCrmIntegration.Lite.Utils;
 using Newtonsoft.Json;
@@ -10,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AmoCrmIntegration.Lite.Service
 {
-    public class AmoCrmService : IAmoCrmService
+    public class AmoCrmService
     {
         private readonly AmoCrmConfig _crmConfig;
 

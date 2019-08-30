@@ -1,0 +1,1 @@
+# AmoCrmIntegration.Lite

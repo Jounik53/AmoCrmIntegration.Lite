@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
-    <id>AmoCrmIntegration.Lite</id>
+    <id>AmoCrmIntegration.Lite_Evgeny_Polyakov</id>
     <version>1.0.0</version>
     <authors>Evgeny Polyakov</authors>
     <owners>Evgeny Polyakov</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Package Description</description>
+    <tags>Amo,  AmoCrm, AmoCrmIntegration</tags>
+    <repository url="https://github.com/Jounik53/AmoCrmIntegration.Lite/tree/master/AmoCrmIntegration.Lite" />
     <dependencies>
       <group targetFramework=".NETStandard2.0">
         <dependency id="Newtonsoft.Json" version="12.0.2" exclude="Build,Analyzers" />

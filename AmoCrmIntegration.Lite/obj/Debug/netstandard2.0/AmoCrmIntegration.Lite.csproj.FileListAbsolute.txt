@@ -7,3 +7,12 @@ I:\AmoCrmIntegration.git\AmoCrmIntegration.Lite\AmoCrmIntegration.Lite\obj\Debug
 I:\AmoCrmIntegration.git\AmoCrmIntegration.Lite\AmoCrmIntegration.Lite\bin\Debug\netstandard2.0\AmoCrmIntegration.Lite.pdb
 I:\AmoCrmIntegration.git\AmoCrmIntegration.Lite\AmoCrmIntegration.Lite\obj\Debug\netstandard2.0\AmoCrmIntegration.Lite.dll
 I:\AmoCrmIntegration.git\AmoCrmIntegration.Lite\AmoCrmIntegration.Lite\obj\Debug\netstandard2.0\AmoCrmIntegration.Lite.pdb
+I:\AmoCrmIntegration.Lite\AmoCrmIntegration.Lite\bin\Debug\netstandard2.0\AmoCrmIntegration.Lite.deps.json
+I:\AmoCrmIntegration.Lite\AmoCrmIntegration.Lite\bin\Debug\netstandard2.0\AmoCrmIntegration.Lite.dll
+I:\AmoCrmIntegration.Lite\AmoCrmIntegration.Lite\bin\Debug\netstandard2.0\AmoCrmIntegration.Lite.pdb
+I:\AmoCrmIntegration.Lite\AmoCrmIntegration.Lite\obj\Debug\netstandard2.0\AmoCrmIntegration.Lite.csprojAssemblyReference.cache
+I:\AmoCrmIntegration.Lite\AmoCrmIntegration.Lite\obj\Debug\netstandard2.0\AmoCrmIntegration.Lite.csproj.CoreCompileInputs.cache
+I:\AmoCrmIntegration.Lite\AmoCrmIntegration.Lite\obj\Debug\netstandard2.0\AmoCrmIntegration.Lite.AssemblyInfoInputs.cache
+I:\AmoCrmIntegration.Lite\AmoCrmIntegration.Lite\obj\Debug\netstandard2.0\AmoCrmIntegration.Lite.AssemblyInfo.cs
+I:\AmoCrmIntegration.Lite\AmoCrmIntegration.Lite\obj\Debug\netstandard2.0\AmoCrmIntegration.Lite.dll
+I:\AmoCrmIntegration.Lite\AmoCrmIntegration.Lite\obj\Debug\netstandard2.0\AmoCrmIntegration.Lite.pdb

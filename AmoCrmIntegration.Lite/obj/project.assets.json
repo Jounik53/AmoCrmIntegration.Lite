@@ -251,11 +251,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "I:\\AmoCrmIntegration.git\\AmoCrmIntegration.Lite\\AmoCrmIntegration.Lite\\AmoCrmIntegration.Lite.csproj",
-      "projectName": "AmoCrmIntegration.Lite",
-      "projectPath": "I:\\AmoCrmIntegration.git\\AmoCrmIntegration.Lite\\AmoCrmIntegration.Lite\\AmoCrmIntegration.Lite.csproj",
+      "projectUniqueName": "I:\\AmoCrmIntegration.Lite\\AmoCrmIntegration.Lite\\AmoCrmIntegration.Lite.csproj",
+      "projectName": "AmoCrmIntegration.Lite_Evgeny_Polyakov",
+      "projectPath": "I:\\AmoCrmIntegration.Lite\\AmoCrmIntegration.Lite\\AmoCrmIntegration.Lite.csproj",
       "packagesPath": "C:\\Users\\Jouni\\.nuget\\packages\\",
-      "outputPath": "I:\\AmoCrmIntegration.git\\AmoCrmIntegration.Lite\\AmoCrmIntegration.Lite\\obj\\",
+      "outputPath": "I:\\AmoCrmIntegration.Lite\\AmoCrmIntegration.Lite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

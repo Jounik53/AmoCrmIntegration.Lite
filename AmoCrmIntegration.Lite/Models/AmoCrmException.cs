@@ -5,7 +5,7 @@ namespace AmoCrmIntegration.Lite.Models
     /// <summary>
     /// Type of class result request in CRM
     /// </summary>
-    public class AmoCrmResult
+    public class Result
     {
         public bool Success { get; set; }
         public string Content { get; set; }

@@ -6,7 +6,7 @@ namespace AmoCrmIntegration.Lite.Models
     /// <summary>
     /// Type of class extension fields (contact) for Common fields in CRM
     /// </summary>
-    public class AmoCrmContact : AmoCrmCommonFields
+    public class AmoCrmContact : CommonFields
     {
         [JsonProperty("request_id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public long RequestId { get; set; }
@@ -18,13 +18,13 @@ namespace AmoCrmIntegration.Lite.Models
         public string CompanyName { get; set; }
 
         [JsonProperty("custom_fields")]
-        public List<AmoCrmContactCustomField> CustomFields { get; set; }
+        public List<ContactCustomField> CustomFields { get; set; }
     }
 
     /// <summary>
     /// Type of class extension custom fields (contact) for Common fields in CRM
     /// </summary>
-    public class AmoCrmContactCustomField : AmoCrmCommonCustomFields
+    public class ContactCustomField : CommonCustomFields
     {
         [JsonProperty("code")]
         public string Code { get; set; }

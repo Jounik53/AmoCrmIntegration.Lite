@@ -20,7 +20,7 @@ namespace AmoCrmIntegration.Lite.Models
     /// <summary>
     /// Type of Common fields in requests
     /// </summary>
-    public class AmoCrmCommonFields
+    public class CommonFields
     {
         [JsonProperty("id")]
         public string Id { get; set; }
@@ -58,13 +58,13 @@ namespace AmoCrmIntegration.Lite.Models
         public long ResponsibleUserId { get; set; }
 
         [JsonProperty("_links")]
-        public List<AmoCrmCommonFieldsLinkFields> Links { get; set; }
+        public List<CommonFieldsLinkFields> Links { get; set; }
     }
 
     /// <summary>
     /// Type of Custom fields in Common fields
     /// </summary>
-    public class AmoCrmCommonCustomFields
+    public class CommonCustomFields
     {
         [JsonProperty("id")]
         public string Id { get; set; }
@@ -76,16 +76,16 @@ namespace AmoCrmIntegration.Lite.Models
         public bool IsSystem { get; set; }
 
         [JsonProperty("values")]
-        public List<AmoCrmCommonCustomFieldValues> Values { get; set; }
+        public List<CommonCustomFieldValues> Values { get; set; }
 
         [JsonProperty("_links")]
-        public List<AmoCrmCommonFieldsLinkFields> Links { get; set; }
+        public List<CommonFieldsLinkFields> Links { get; set; }
     }
 
     /// <summary>
     /// Type of Custom fields values in Common fields
     /// </summary>
-    public class AmoCrmCommonCustomFieldValues
+    public class CommonCustomFieldValues
     {
         [JsonProperty("value")]
         public string Value { get; set; }
@@ -100,16 +100,16 @@ namespace AmoCrmIntegration.Lite.Models
     /// <summary>
     /// Type of Link fields in Common fields
     /// </summary>
-    public class AmoCrmCommonFieldsLinkFields
+    public class CommonFieldsLinkFields
     {
         [JsonProperty("self")]
-        public List<AmoCrmCommonFieldsLinkFieldsValue> Self { get; set; }
+        public List<CommonFieldsLinkFieldsValue> Self { get; set; }
     }
 
     /// <summary>
     /// Type of Link fields value in Common fields
     /// </summary>
-    public class AmoCrmCommonFieldsLinkFieldsValue
+    public class CommonFieldsLinkFieldsValue
     {
         [JsonProperty("href")]
         public string Href { get; set; }

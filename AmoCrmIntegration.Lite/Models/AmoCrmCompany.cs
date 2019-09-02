@@ -6,7 +6,7 @@ namespace AmoCrmIntegration.Lite.Models
     /// <summary>
     /// Type of class extension fields (company) for Common fields in CRM
     /// </summary>
-    public class AmoCrmCompany : AmoCrmCommonFields
+    public class AmoCrmCompany : CommonFields
     {
         [JsonProperty("status_id")]
         public int? StatusId { get; set; }
@@ -15,13 +15,13 @@ namespace AmoCrmIntegration.Lite.Models
         public string LeadsId { get; set; }
 
         [JsonProperty("custom_fields")]
-        public List<AmoCrmCompanyCustomField> CustomFields { get; set; }
+        public List<CompanyCustomField> CustomFields { get; set; }
     }
 
     /// <summary>
     /// Type of class extension custom fields (company) for Common fields in CRM
     /// </summary>
-    public class AmoCrmCompanyCustomField : AmoCrmCommonCustomFields
+    public class CompanyCustomField : CommonCustomFields
     {
     }
 }

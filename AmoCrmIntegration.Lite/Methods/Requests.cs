@@ -235,7 +235,7 @@ namespace AmoCrmIntegration.Lite.Methods
                 request.AddParameter("USER_HASH", credentials.Password);
 
                 var response = new RestClient(credentials.Domain).Execute(request);
-                var responseContent = response.Content.DeserializeTo<AmoCrmResponseAuth>();
+                var responseContent = response.Content.DeserializeTo<ResponseAuth>();
                 if (!responseContent.Response.Auth)
                 {
                     throw new AmoCrmException(responseContent.Response.ErrorMessage,

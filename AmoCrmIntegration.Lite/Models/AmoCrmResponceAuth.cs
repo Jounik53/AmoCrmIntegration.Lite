@@ -5,16 +5,16 @@ namespace AmoCrmIntegration.Lite.Models
     /// <summary>
     /// Type of response for auth in CRM
     /// </summary>
-    public class AmoCrmResponseAuth
+    public class ResponseAuth
     {
         [JsonProperty("response")]
-        public AmoCrmResponseAuthValue Response { get; set; }
+        public ResponseAuthValue Response { get; set; }
     }
 
     /// <summary>
     /// Type of response values for auth in CRM
     /// </summary>
-    public class AmoCrmResponseAuthValue
+    public class ResponseAuthValue
     {
         [JsonProperty("auth")]
         public bool Auth { get; set; }

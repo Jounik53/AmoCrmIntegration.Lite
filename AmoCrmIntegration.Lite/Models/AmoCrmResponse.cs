@@ -6,13 +6,13 @@ namespace AmoCrmIntegration.Lite.Models
     /// <summary>
     /// Type of class response in CRM
     /// </summary>
-    public class ResponseAmoCrm
+    public class ResponseCrm
     {
         [JsonProperty("_embedded")]
-        public ResponseAmoCrmValue Embedded { get; set; }
+        public ResponseCrmValue Embedded { get; set; }
 
         [JsonProperty("_links")]
-        public List<AmoCrmCommonFieldsLinkFields> Links { get; set; }
+        public List<CommonFieldsLinkFields> Links { get; set; }
 
         [JsonProperty("title")]
         public string Title { get; set; }
@@ -27,31 +27,31 @@ namespace AmoCrmIntegration.Lite.Models
     /// <summary>
     /// Type of class response value in CRM
     /// </summary>
-    public class ResponseAmoCrmValue
+    public class ResponseCrmValue
     {
         [JsonProperty("items")]
-        public List<AmoCrmResponseObject> Items { get; set; }
+        public List<CrmResponseObject> Items { get; set; }
     }
 
     /// <summary>
     /// Type of class extension fields (response) for Common fields in CRM
     /// </summary>
-    public class AmoCrmResponseObject : AmoCrmCommonFields
+    public class CrmResponseObject : CommonFields
     {
         [JsonProperty("is_deleted")]
         public bool IsDeleted { get; set; }
 
         [JsonProperty("main_contact")]
-        public List<AmoCrmCommonCustomFields> MainContact { get; set; }
+        public List<CommonCustomFields> MainContact { get; set; }
 
         [JsonProperty("group_id")]
         public string GroupId { get; set; }
 
         [JsonProperty("company")]
-        public List<AmoCrmCommonCustomFields> Company { get; set; }
+        public List<CommonCustomFields> Company { get; set; }
 
         [JsonProperty("leads")]
-        public List<AmoCrmCommonCustomFields> Leads { get; set; }
+        public List<CommonCustomFields> Leads { get; set; }
 
         [JsonProperty("closed_at")]
         public string ClosedAt { get; set; }
@@ -60,19 +60,19 @@ namespace AmoCrmIntegration.Lite.Models
         public string ClosestTaskAt { get; set; }
 
         [JsonProperty("tags")]
-        public List<AmoCrmResponseTagsValue> TagsResponse { get; set; }
+        public List<CrmResponseTagsValue> TagsResponse { get; set; }
 
         [JsonProperty("custom_fields")]
-        public List<AmoCrmCommonCustomFields> CustomFields { get; set; }
+        public List<CommonCustomFields> CustomFields { get; set; }
 
         [JsonProperty("contacts")]
-        public List<AmoCrmCommonCustomFields> Contacts { get; set; }
+        public List<CommonCustomFields> Contacts { get; set; }
 
         [JsonProperty("pipeline")]
-        public List<AmoCrmCommonCustomFields> Pipeline { get; set; }
+        public List<CommonCustomFields> Pipeline { get; set; }
 
         [JsonProperty("customers")]
-        public List<AmoCrmCommonCustomFields> Customers { get; set; }
+        public List<CommonCustomFields> Customers { get; set; }
 
         [JsonProperty("request_id")]
         public string RequestId { get; set; }
@@ -87,7 +87,7 @@ namespace AmoCrmIntegration.Lite.Models
     /// <summary>
     /// Type of class extension tags fields for response in CRM
     /// </summary>
-    public class AmoCrmResponseTagsValue
+    public class CrmResponseTagsValue
     {
         [JsonProperty("id")]
         public string Id { get; set; }

@@ -33,7 +33,7 @@ namespace AmoCrmIntegration.Lite.Service
             var parameterId = new Parameter[]
                 {new Parameter {Name = "", Value = "", Type = ParameterType.QueryString}};
             var accountInfo =
-                await Requests.GetAsync<AmoCrmResult>(_crmConfig.AccountCurrentUrl, parameterId, _crmConfig);
+                await Requests.GetAsync<Result>(_crmConfig.AccountCurrentUrl, parameterId, _crmConfig);
             if (!accountInfo.Success)
             {
                 throw new AmoCrmException(accountInfo.ErrorMessage, accountInfo.ErrorCode);
@@ -59,7 +59,7 @@ namespace AmoCrmIntegration.Lite.Service
             var parameterId = new Parameter[]
                 {new Parameter {Name = "", Value = "", Type = ParameterType.QueryString}};
             var accountInfo =
-                await Requests.GetAsync<AmoCrmResult>(url, parameterId, cookies, limitRows, limitOffSet, modifiedSince);
+                await Requests.GetAsync<Result>(url, parameterId, cookies, limitRows, limitOffSet, modifiedSince);
             if (!accountInfo.Success)
             {
                 throw new AmoCrmException(accountInfo.ErrorMessage, accountInfo.ErrorCode);
@@ -84,7 +84,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "", Value = "", Type = ParameterType.QueryString}};
-            var accountInfo = await Requests.GetAsync<AmoCrmResult>(url, parameterId, credential, limitRows,
+            var accountInfo = await Requests.GetAsync<Result>(url, parameterId, credential, limitRows,
                 limitOffSet, modifiedSince);
             if (!accountInfo.Success)
             {
@@ -109,7 +109,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "id", Value = contactId, Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(_crmConfig.ContactUrl, parameterId, _crmConfig);
+            var contact = await Requests.GetAsync<Result>(_crmConfig.ContactUrl, parameterId, _crmConfig);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -128,7 +128,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "", Value = "", Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(_crmConfig.ContactUrl, parameterId, _crmConfig);
+            var contact = await Requests.GetAsync<Result>(_crmConfig.ContactUrl, parameterId, _crmConfig);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -148,7 +148,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "query", Value = query, Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(_crmConfig.ContactUrl, parameterId, _crmConfig);
+            var contact = await Requests.GetAsync<Result>(_crmConfig.ContactUrl, parameterId, _crmConfig);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -171,7 +171,7 @@ namespace AmoCrmIntegration.Lite.Service
                 new Parameter
                     {Name = "responsible_user_id", Value = responsibleUserId, Type = ParameterType.QueryString}
             };
-            var contact = await Requests.GetAsync<AmoCrmResult>(_crmConfig.ContactUrl, parameterId, _crmConfig);
+            var contact = await Requests.GetAsync<Result>(_crmConfig.ContactUrl, parameterId, _crmConfig);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -193,7 +193,7 @@ namespace AmoCrmIntegration.Lite.Service
         /// <returns>Deserialize the response to the specified class</returns>
         public async Task<T> AddOrUpdateContactAsync<T>(AddOrUpdateCommand<AmoCrmContact> contacts) where T : class
         {
-            var response = await Requests.PostAsync<AmoCrmResult>(_crmConfig.ContactUrl,
+            var response = await Requests.PostAsync<Result>(_crmConfig.ContactUrl,
                 JsonConvert.SerializeObject(contacts), _crmConfig);
             if (!response.Success)
             {
@@ -215,7 +215,7 @@ namespace AmoCrmIntegration.Lite.Service
         public async Task<T> AddOrUpdateContactAsync<T>(AddOrUpdateCommand<AmoCrmContact> contacts, string url,
             CookieContainer cookies) where T : class
         {
-            var response = await Requests.PostAsync<AmoCrmResult>(url, JsonConvert.SerializeObject(contacts), cookies);
+            var response = await Requests.PostAsync<Result>(url, JsonConvert.SerializeObject(contacts), cookies);
             if (!response.Success)
             {
                 throw new ArgumentException(response.ErrorCode + ":" + response.ErrorMessage);
@@ -237,7 +237,7 @@ namespace AmoCrmIntegration.Lite.Service
             NetworkCredential credential) where T : class
         {
             var response =
-                await Requests.PostAsync<AmoCrmResult>(url, JsonConvert.SerializeObject(contacts), credential);
+                await Requests.PostAsync<Result>(url, JsonConvert.SerializeObject(contacts), credential);
             if (!response.Success)
             {
                 throw new ArgumentException(response.ErrorCode + ":" + response.ErrorMessage);
@@ -260,7 +260,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "", Value = "", Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(_crmConfig.LeadUrl, parameterId, _crmConfig);
+            var contact = await Requests.GetAsync<Result>(_crmConfig.LeadUrl, parameterId, _crmConfig);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -285,7 +285,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "", Value = "", Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, cookies);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, cookies);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -310,7 +310,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "", Value = "", Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, credential);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, credential);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -331,7 +331,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "", Value = "", Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, _crmConfig);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, _crmConfig);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -353,7 +353,7 @@ namespace AmoCrmIntegration.Lite.Service
         public async Task<T> AddLeadAsync<T>(AddOrUpdateCommand<AmoCrmLead> leads) where T : class
         {
             var response =
-                await Requests.PostAsync<AmoCrmResult>(_crmConfig.LeadUrl, JsonConvert.SerializeObject(leads),
+                await Requests.PostAsync<Result>(_crmConfig.LeadUrl, JsonConvert.SerializeObject(leads),
                     _crmConfig);
             if (!response.Success)
                 throw new ArgumentException(response.ErrorCode + ":" + response.ErrorMessage);
@@ -371,7 +371,7 @@ namespace AmoCrmIntegration.Lite.Service
         public async Task<T> AddLeadAsync<T>(AddOrUpdateCommand<AmoCrmLead> leads, string url, CookieContainer cookies)
             where T : class
         {
-            var response = await Requests.PostAsync<AmoCrmResult>(url, JsonConvert.SerializeObject(leads), cookies);
+            var response = await Requests.PostAsync<Result>(url, JsonConvert.SerializeObject(leads), cookies);
             if (!response.Success)
                 throw new ArgumentException(response.ErrorCode + ":" + response.ErrorMessage);
             return response.Content.DeserializeTo<T>();
@@ -388,7 +388,7 @@ namespace AmoCrmIntegration.Lite.Service
         public async Task<T> AddLeadAsync<T>(AddOrUpdateCommand<AmoCrmLead> leads, string url,
             NetworkCredential credential) where T : class
         {
-            var response = await Requests.PostAsync<AmoCrmResult>(url, JsonConvert.SerializeObject(leads), credential);
+            var response = await Requests.PostAsync<Result>(url, JsonConvert.SerializeObject(leads), credential);
             if (!response.Success)
                 throw new ArgumentException(response.ErrorCode + ":" + response.ErrorMessage);
             return response.Content.DeserializeTo<T>();
@@ -409,7 +409,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "id", Value = companyId, Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(_crmConfig.CompanyUrl, parameterId, _crmConfig);
+            var contact = await Requests.GetAsync<Result>(_crmConfig.CompanyUrl, parameterId, _crmConfig);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -428,7 +428,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "", Value = "", Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(_crmConfig.CompanyUrl, parameterId, _crmConfig);
+            var contact = await Requests.GetAsync<Result>(_crmConfig.CompanyUrl, parameterId, _crmConfig);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -448,7 +448,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "query", Value = query, Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(_crmConfig.CompanyUrl, parameterId, _crmConfig);
+            var contact = await Requests.GetAsync<Result>(_crmConfig.CompanyUrl, parameterId, _crmConfig);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -471,7 +471,7 @@ namespace AmoCrmIntegration.Lite.Service
                 new Parameter
                     {Name = "responsible_user_id", Value = responsibleUserId, Type = ParameterType.QueryString}
             };
-            var contact = await Requests.GetAsync<AmoCrmResult>(_crmConfig.CompanyUrl, parameterId, _crmConfig);
+            var contact = await Requests.GetAsync<Result>(_crmConfig.CompanyUrl, parameterId, _crmConfig);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -492,7 +492,7 @@ namespace AmoCrmIntegration.Lite.Service
         /// <returns>Deserialize the response to the specified class</returns>
         public async Task<T> AddCompanyAsync<T>(AddOrUpdateCommand<AmoCrmCompany> company) where T : class
         {
-            var response = await Requests.PostAsync<AmoCrmResult>(_crmConfig.CompanyUrl,
+            var response = await Requests.PostAsync<Result>(_crmConfig.CompanyUrl,
                 JsonConvert.SerializeObject(company), _crmConfig);
             if (!response.Success)
                 throw new ArgumentException(response.ErrorCode + ":" + response.ErrorMessage);
@@ -510,7 +510,7 @@ namespace AmoCrmIntegration.Lite.Service
         public async Task<T> AddCompanyAsync<T>(AddOrUpdateCommand<AmoCrmCompany> company, string url,
             CookieContainer cookies) where T : class
         {
-            var response = await Requests.PostAsync<AmoCrmResult>(url, JsonConvert.SerializeObject(company), cookies);
+            var response = await Requests.PostAsync<Result>(url, JsonConvert.SerializeObject(company), cookies);
             if (!response.Success)
                 throw new ArgumentException(response.ErrorCode + ":" + response.ErrorMessage);
             return response.Content.DeserializeTo<T>();
@@ -528,7 +528,7 @@ namespace AmoCrmIntegration.Lite.Service
             NetworkCredential credential) where T : class
         {
             var response =
-                await Requests.PostAsync<AmoCrmResult>(url, JsonConvert.SerializeObject(company), credential);
+                await Requests.PostAsync<Result>(url, JsonConvert.SerializeObject(company), credential);
             if (!response.Success)
                 throw new ArgumentException(response.ErrorCode + ":" + response.ErrorMessage);
             return response.Content.DeserializeTo<T>();
@@ -547,7 +547,7 @@ namespace AmoCrmIntegration.Lite.Service
         /// <returns>Deserialize the response to the specified class</returns>
         public async Task<T> AddObjAsync<T>(AddOrUpdateCommand<T> obj, string url) where T : class
         {
-            var response = await Requests.PostAsync<AmoCrmResult>(url, JsonConvert.SerializeObject(obj), _crmConfig);
+            var response = await Requests.PostAsync<Result>(url, JsonConvert.SerializeObject(obj), _crmConfig);
             if (!response.Success)
                 throw new ArgumentException(response.ErrorCode + ":" + response.ErrorMessage);
             return response.Content.DeserializeTo<T>();
@@ -563,7 +563,7 @@ namespace AmoCrmIntegration.Lite.Service
         /// <returns>Deserialize the response to the specified class</returns>
         public async Task<T> AddObjAsync<T>(AddOrUpdateCommand<T> obj, string url, CookieContainer cookies) where T : class
         {
-            var response = await Requests.PostAsync<AmoCrmResult>(url, JsonConvert.SerializeObject(obj), cookies);
+            var response = await Requests.PostAsync<Result>(url, JsonConvert.SerializeObject(obj), cookies);
             if (!response.Success)
                 throw new ArgumentException(response.ErrorCode + ":" + response.ErrorMessage);
             return response.Content.DeserializeTo<T>();
@@ -580,7 +580,7 @@ namespace AmoCrmIntegration.Lite.Service
         public async Task<T> AddObjAsync<T>(AddOrUpdateCommand<T> obj, string url, NetworkCredential credential)
             where T : class
         {
-            var response = await Requests.PostAsync<AmoCrmResult>(url, JsonConvert.SerializeObject(obj), credential);
+            var response = await Requests.PostAsync<Result>(url, JsonConvert.SerializeObject(obj), credential);
             if (!response.Success)
                 throw new ArgumentException(response.ErrorCode + ":" + response.ErrorMessage);
             return response.Content.DeserializeTo<T>();
@@ -609,7 +609,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "id", Value = id, Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, cookies);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, cookies);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -635,7 +635,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "id", Value = id, Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, credential);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, credential);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -657,7 +657,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "id", Value = id, Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, _crmConfig);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, _crmConfig);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -687,7 +687,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "query", Value = query, Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, cookies);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, cookies);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -713,7 +713,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "query", Value = query, Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, credential);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, credential);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -735,7 +735,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "query", Value = query, Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, _crmConfig);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, _crmConfig);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -768,7 +768,7 @@ namespace AmoCrmIntegration.Lite.Service
             {
                 new Parameter {Name = "responsibleUserId", Value = responsibleUserId, Type = ParameterType.QueryString}
             };
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, cookies);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, cookies);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -797,7 +797,7 @@ namespace AmoCrmIntegration.Lite.Service
             {
                 new Parameter {Name = "responsibleUserId", Value = responsibleUserId, Type = ParameterType.QueryString}
             };
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, credential);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, credential);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -821,7 +821,7 @@ namespace AmoCrmIntegration.Lite.Service
             {
                 new Parameter {Name = "responsibleUserId", Value = responsibleUserId, Type = ParameterType.QueryString}
             };
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, _crmConfig);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, _crmConfig);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -850,7 +850,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "", Value = "", Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, cookies);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, cookies);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -875,7 +875,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "", Value = "", Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, credential);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, credential);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);
@@ -896,7 +896,7 @@ namespace AmoCrmIntegration.Lite.Service
         {
             var parameterId = new Parameter[]
                 {new Parameter {Name = "", Value = "", Type = ParameterType.QueryString}};
-            var contact = await Requests.GetAsync<AmoCrmResult>(url, parameterId, _crmConfig);
+            var contact = await Requests.GetAsync<Result>(url, parameterId, _crmConfig);
             if (!contact.Success)
             {
                 throw new AmoCrmException(contact.ErrorMessage, contact.ErrorCode);

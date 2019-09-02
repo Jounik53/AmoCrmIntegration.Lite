@@ -6,7 +6,7 @@ namespace AmoCrmIntegration.Lite.Models
     /// <summary>
     /// CRM Account Information
     /// </summary>
-    public class CrmAccountInfo
+    public class AccountInfo
     {
         [JsonProperty("id")]
         public string Id { get; set; }
@@ -27,19 +27,19 @@ namespace AmoCrmIntegration.Lite.Models
         public string Language { get; set; }
 
         [JsonProperty("date_pattern")]
-        public AmoCroDataPatternEnum DatePattern { get; set; }
+        public DataPatternEnum DatePattern { get; set; }
 
         [JsonProperty("current_user")]
         public string CurrentUser { get; set; }
 
         [JsonProperty("_embedded")]
-        public AmoCrmAccountEmbedded Embedded { get; set; }
+        public AccountEmbedded Embedded { get; set; }
     }
 
     /// <summary>
     /// Type of Embedded in CRM
     /// </summary>
-    public class AmoCrmAccountEmbedded
+    public class AccountEmbedded
     {
         [JsonProperty("users")]
         public Dictionary<string, CrmUser> Users { get; set; }
@@ -54,7 +54,7 @@ namespace AmoCrmIntegration.Lite.Models
         public List<TaskType> TaskTypes { get; set; }
 
         [JsonProperty("pipelines")]
-        public Dictionary<string, CrmLeadPipelines> Pipelines { get; set; }
+        public Dictionary<string, LeadPipelines> Pipelines { get; set; }
     }
 
     /// <summary>
@@ -90,13 +90,13 @@ namespace AmoCrmIntegration.Lite.Models
         public bool IsAdmin { get; set; }
 
         [JsonProperty("rights")]
-        public CrmContactRights Rights { get; set; }
+        public ContactRights Rights { get; set; }
     }
 
     /// <summary>
     /// Type of Contact rights in CRM
     /// </summary>
-    public class CrmContactRights
+    public class ContactRights
     {
         [JsonProperty("mail")]
         public string Mail { get; set; }
@@ -153,7 +153,7 @@ namespace AmoCrmIntegration.Lite.Models
     /// <summary>
     /// Type of PipeLine in CRM
     /// </summary>
-    public class CrmLeadPipelines
+    public class LeadPipelines
     {
         [JsonProperty("id")]
         public long Id { get; set; }
@@ -168,13 +168,13 @@ namespace AmoCrmIntegration.Lite.Models
         public bool IsMain { get; set; }
 
         [JsonProperty("statuses")]
-        public Dictionary<string, CrmLeadStatus> Statuses { get; set; }
+        public Dictionary<string, LeadStatus> Statuses { get; set; }
     }
 
     /// <summary>
     /// Type of LeadStatuses in CRM
     /// </summary>
-    public class CrmLeadStatus
+    public class LeadStatus
     {
         [JsonProperty("id")]
         public long Id { get; set; }
@@ -234,13 +234,13 @@ namespace AmoCrmIntegration.Lite.Models
         public bool IdEditable { get; set; }
 
         [JsonProperty("enums")]
-        public List<AmoCrmAccountInfoEnums> Enums { get; set; }
+        public List<AccountInfoEnums> Enums { get; set; }
     }
 
     /// <summary>
     /// Type of enums for AccountInfo in CRM
     /// </summary>
-    public class AmoCrmAccountInfoEnums
+    public class AccountInfoEnums
     {
         [JsonProperty("id")]
         public long Id { get; set; }
@@ -282,7 +282,7 @@ namespace AmoCrmIntegration.Lite.Models
     /// <summary>
     /// Type of Enums for DatePattern in CRM
     /// </summary>
-    public class AmoCroDataPatternEnum
+    public class DataPatternEnum
     {
         [JsonProperty("date")]
         public long Date { get; set; }
